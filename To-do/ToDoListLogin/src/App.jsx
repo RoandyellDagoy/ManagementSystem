@@ -3,7 +3,12 @@ import './App.css'
 function App() {
   return (
     <>
-      <div>To-do List</div>
+      <div className='todo'>
+        <input type="text" className='addTask' onChange={() =>{
+          
+        }}/>
+        <button className='submit'>Add Task</button>
+      </div>
     </>
   )
 }
