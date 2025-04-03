@@ -1,13 +1,25 @@
+import { useState } from 'react'
 import './App.css'
 
 function App() {
+  const [task, setTask] = useState("");
+
+  const [show, setShow] = useState(false);
+
+  const handleChange = () => {
+    setShow("display:block");
+  }
+
   return (
     <>
-      <div className='todo'>
-        <input type="text" className='addTask' onChange={() =>{
-          
-        }}/>
-        <button className='submit'>Add Task</button>
+      <div>
+        <input type="text" value={task} onChange={(event)=> {
+          setTask(event.target.value);
+        }} />
+        <button onClick={handleChange}>Add</button>
+        <div>
+          <h1>{task}</h1>
+        </div>
       </div>
     </>
   )
